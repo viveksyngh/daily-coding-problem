@@ -1,5 +1,5 @@
 def find_pair(numbers, k):
-    index_list = [False] * k
+    number_map = {}
     if len(numbers) < 2:
         return False
 
@@ -7,8 +7,8 @@ def find_pair(numbers, k):
         if k - number - 1 == 0:
             continue
 
-        if index_list[k - number - 1]:
+        if number_map.get(k - number, False):
             return True
         
-        index_list[ number - 1] = True
+        number_map[number] = True
     return False
